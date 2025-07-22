@@ -26,7 +26,7 @@ param enable_purview bool=true
 
 // Variables
 var suffix = uniqueString(resourceGroup().id)
-var keyvault_uniquename = '${keyvault_name}-${suffix}'
+var keyvault_uniquename = take('${keyvault_name}-${suffix}', 24)
 
 
 // Create Key Vault
@@ -47,21 +47,7 @@ resource keyvault 'Microsoft.KeyVault/vaults@2023-07-01' ={
     enabledForDeployment: true
     enabledForDiskEncryption: true
     enabledForTemplateDeployment: true
-    // Default Access Policies. Replace the ObjectID's with your user/group id
-    accessPolicies:[
-      { tenantId: subscription().tenantId
-        objectId: '01e16ca5-e5da-49f3-ac27-a46f1cc68ede' // Replace this with your user/group ObjectID
-        permissions: {secrets:['list','get','set']}
-      }
-      { tenantId: subscription().tenantId
-        objectId: '688ad7c8-d7bb-4f32-884a-05601c9762a2' // Replace this with your user/group ObjectID
-        permissions: {secrets:['list','get','set']}
-      }
-      { tenantId: subscription().tenantId
-        objectId: '703595dd-9298-4ef8-ab80-a64f10e8ea07' // Replace this with your user/group ObjectID
-        permissions: {secrets:['list','get']}
-      }
-    ]
+    enableRbacAuthorization: true
   }
 }
 
@@ -70,19 +56,36 @@ resource existing_purview_account 'Microsoft.Purview/accounts@2021-07-01' existi
     name: purview_account_name
     scope: resourceGroup(purviewrg)
   }
-  
-resource this_keyvault_accesspolicy 'Microsoft.KeyVault/vaults/accessPolicies@2022-07-01' = if(enable_purview) {
-  name: 'add'
-  parent: keyvault
-  properties: {
-    accessPolicies: [
-      { tenantId: subscription().tenantId
-        objectId: existing_purview_account.identity.principalId
-        permissions: { secrets:  ['list','get']}
 
-      }
-    ]
+@description('This is the built-in Key Vault Secret User role. See https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-secrets-user')
+resource keyVaultSecretUserRoleRoleDefinition 'Microsoft.Authorization/roleDefinitions@2018-01-01-preview' existing = {
+  name: '4633458b-17de-408a-b874-0445c86b69e6'
+  scope: subscription()
+}
+
+@description('Grant the app service identity with key vault secret user role permissions over the key vault. This allows reading secret contents')
+resource this_keyvault_secretuser_purview 'Microsoft.Authorization/roleAssignments@2020-08-01-preview' = if(enable_purview) {
+  scope: keyvault
+  name: guid(resourceGroup().id, existing_purview_account.id, keyVaultSecretUserRoleRoleDefinition.id)
+  properties: {
+    roleDefinitionId: keyVaultSecretUserRoleRoleDefinition.id
+    principalId: enable_purview ? (existing_purview_account.?identity.principalId ?? '') : ''
+    principalType: 'ServicePrincipal'
   }
 }
+
+// resource this_keyvault_accesspolicy 'Microsoft.KeyVault/vaults/accessPolicies@2022-07-01' = if(enable_purview) {
+//   name: 'add'
+//   parent: keyvault
+//   properties: {
+//     accessPolicies: [
+//       { tenantId: subscription().tenantId
+//         objectId: existing_purview_account.identity.principalId
+//         permissions: { secrets:  ['list','get']}
+
+//       }
+//     ]
+//   }
+// }
 
 output keyvault_name string = keyvault.name
