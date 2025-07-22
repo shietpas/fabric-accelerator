@@ -141,7 +141,7 @@ module fabric_capacity './modules/fabric-capacity.bicep' = {
   name: fabric_deployment_name
   scope: fabric_rg
   params:{
-    fabric_name: 'fab-fab-accelerator'
+    fabric_name: 'fabaccelerator01'  //3-63 characters, alphanumeric
     location: fabric_rg.location
     cost_centre_tag: cost_centre_tag
     owner_tag: owner_tag
