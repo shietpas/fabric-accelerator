@@ -93,7 +93,7 @@
             "value": "@pipeline().parameters.ComputeName",
             "type": "Expression"
           },
-          "workspaceId": "8d8d00a7-0e8a-4e3b-8c0e-8dcafac7adec",
+          "workspaceId": "681534df-b5cf-44dc-9644-46312e52c461",
           "parameters": {
             "L1TransformInstanceID": {
               "value": {
@@ -247,7 +247,7 @@
             "value": "@replace(replace(pipeline().parameters.ComputeName,'-','_'),' ','')",
             "type": "Expression"
           },
-          "capacityId": "e4eb626a-4082-4143-983d-6fc9284b74cd"
+          "capacityId": "39A721A7-A838-4500-BAC2-5B175A98A042"
         }
       },
       {
@@ -887,7 +887,7 @@
       },
       "SilverWorkspaceID": {
         "type": "string",
-        "defaultValue": "8d8d00a7-0e8a-4e3b-8c0e-8dcafac7adec"
+        "defaultValue": "681534df-b5cf-44dc-9644-46312e52c461"
       }
     },
     "variables": {

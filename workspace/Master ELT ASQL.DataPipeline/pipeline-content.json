@@ -327,7 +327,7 @@
       },
       "BronzeWorkspaceID": {
         "type": "string",
-        "defaultValue": "8d8d00a7-0e8a-4e3b-8c0e-8dcafac7adec"
+        "defaultValue": "681534df-b5cf-44dc-9644-46312e52c461"
       },
       "SilverObjectID": {
         "type": "string",
@@ -335,7 +335,7 @@
       },
       "SilverWorkspaceID": {
         "type": "string",
-        "defaultValue": "8d8d00a7-0e8a-4e3b-8c0e-8dcafac7adec"
+        "defaultValue": "681534df-b5cf-44dc-9644-46312e52c461"
       },
       "GoldObjectID": {
         "type": "string",
@@ -343,7 +343,7 @@
       },
       "GoldWorkspaceID": {
         "type": "string",
-        "defaultValue": "8d8d00a7-0e8a-4e3b-8c0e-8dcafac7adec"
+        "defaultValue": "681534df-b5cf-44dc-9644-46312e52c461"
       },
       "GoldDWEndpoint": {
         "type": "string",
