@@ -12,12 +12,12 @@ param rglocation string = 'northcentralus'
 param cost_centre_tag string = 'DADP-Sandbox'
 
 @description('System Owner tag that will be applied to all resources in this deployment')
-param owner_tag string = 'scott.hietpas@nri-na.com'
+param owner_tag string = 'scott.hietpas@SkylineDataAnalytics.onmicrosoft.com' //Administrators must be local tenant user (not guest)
 
-@description('Subject Matter EXpert (SME) tag that will be applied to all resources in this deployment')
-param sme_tag string ='scott.hietpas@nri-na.com'
+@description('Subject Matter Expert (SME) tag that will be applied to all resources in this deployment')
+param sme_tag string ='scott.hietpas@SkylineDataAnalytics.onmicrosoft.com'
 
-@description('Timestamp that will be appendedto the deployment name')
+@description('Timestamp that will be appended to the deployment name')
 param deployment_suffix string = utcNow()
 
 @description('Flag to indicate whether to create a new Purview resource with this data platform deployment')
@@ -116,10 +116,10 @@ module kv './modules/keyvault.bicep' = {
   }
 }
 
-resource kv_ref 'Microsoft.KeyVault/vaults@2023-07-01' existing = {
-  name: kv.outputs.keyvault_name
-  scope: fabric_rg
-}
+// resource kv_ref 'Microsoft.KeyVault/vaults@2023-07-01' existing = {
+//   name: kv.outputs.keyvault_name
+//   scope: fabric_rg
+// }
 
 //Enable auditing for data platform resources
 module audit_integration './modules/audit.bicep' = if(enable_audit) {
