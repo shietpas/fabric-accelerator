@@ -47,7 +47,7 @@ var fabric_deployment_name = 'fabric_dataplatform_deployment_${deployment_suffix
 var purview_deployment_name = 'purview_deployment_${deployment_suffix}'
 var keyvault_deployment_name = 'keyvault_deployment_${deployment_suffix}'
 var audit_deployment_name = 'audit_deployment_${deployment_suffix}'
-var controldb_deployment_name = 'controldb_deployment_${deployment_suffix}'
+// var controldb_deployment_name = 'controldb_deployment_${deployment_suffix}'
 
 // Create data platform resource group
 resource fabric_rg  'Microsoft.Resources/resourceGroups@2024-03-01' = {
@@ -110,7 +110,7 @@ module kv './modules/keyvault.bicep' = {
      cost_centre_tag: cost_centre_tag
      owner_tag: owner_tag
      sme_tag: sme_tag
-     purview_account_name: enable_purview ? purview.outputs.purview_account_name : ''
+     purview_account_name: enable_purview ? (purview.?outputs.purview_account_name ?? '') : ''
      purviewrg: enable_purview ? purviewrg : ''
      enable_purview: enable_purview
   }
@@ -126,7 +126,7 @@ module audit_integration './modules/audit.bicep' = if(enable_audit) {
   name: audit_deployment_name
   scope: audit_rg
   params:{
-    location: enable_audit ? audit_rg.location : ''
+    location: audit_rg.?location ?? ''
     cost_centre_tag: cost_centre_tag
     owner_tag: owner_tag
     sme_tag: sme_tag

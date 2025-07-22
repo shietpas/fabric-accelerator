@@ -26,7 +26,7 @@ param enable_purview bool=true
 
 // Variables
 var suffix = uniqueString(resourceGroup().id)
-var keyvault_uniquename = '${keyvault_name}-${suffix}'
+var keyvault_uniquename = take('${keyvault_name}-${suffix}', 24)
 
 
 // Create Key Vault
@@ -69,7 +69,7 @@ resource this_keyvault_secretuser_purview 'Microsoft.Authorization/roleAssignmen
   name: guid(resourceGroup().id, existing_purview_account.id, keyVaultSecretUserRoleRoleDefinition.id)
   properties: {
     roleDefinitionId: keyVaultSecretUserRoleRoleDefinition.id
-    principalId: enable_purview ? existing_purview_account.identity.principalId : ''
+    principalId: enable_purview ? (existing_purview_account.?identity.principalId ?? '') : ''
     principalType: 'ServicePrincipal'
   }
 }
