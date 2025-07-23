@@ -1262,10 +1262,10 @@
       "kind": "kusto-trident",
       "scopeId": "kusto-trident",
       "clusterUri": "",
-      "database": "a2f38d43-8543-48f9-8569-e290ea4828f7",
+      "database": "ae1042a0-c9c7-49a5-b1ad-faeec5382617",
       "name": "kdb_fabricEvents",
       "id": "2505cb77-5a0e-49ed-8f65-9e0b9c774870",
-      "workspace": "00000000-0000-0000-0000-000000000000"
+      "workspace": "681534df-b5cf-44dc-9644-46312e52c461"
     }
   ],
   "pages": [
