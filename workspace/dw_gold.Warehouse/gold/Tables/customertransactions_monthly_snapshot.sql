@@ -10,4 +10,3 @@ CREATE TABLE [gold].[customertransactions_monthly_snapshot] (
 	[TransactionAmount] decimal(38,2) NULL, 
 	[OutstandingBalance] decimal(38,2) NULL
 );
-

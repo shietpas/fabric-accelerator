@@ -6,4 +6,3 @@ CREATE TABLE [gold].[purchaseorders_monthly_snapshot] (
 	[TaxAmount] decimal(38,2) NULL, 
 	[POCount] int NULL
 );
-

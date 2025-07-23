@@ -5,4 +5,3 @@ CREATE TABLE [gold].[orders_monthly_snapshot] (
 	[OrderMonth] date NULL, 
 	[OrderCount] int NULL
 );
-
