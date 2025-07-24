@@ -49,7 +49,7 @@
               "typeProperties": {
                 "schema": "ELT",
                 "table": "IngestDefinition",
-                "database": "controlDB"
+                "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
               },
               "externalReferences": {
                 "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"
@@ -293,7 +293,7 @@
               "type": "AzureSqlTable",
               "schema": [],
               "typeProperties": {
-                "database": "controlDB"
+                "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
               },
               "externalReferences": {
                 "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"
@@ -321,7 +321,7 @@
               "typeProperties": {
                 "schema": "ELT",
                 "table": "L1TransformDefinition",
-                "database": "controlDB"
+                "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
               },
               "externalReferences": {
                 "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"
@@ -617,7 +617,7 @@
                     }
                   }
                 ],
-                "database": "controlDB"
+                "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
               },
               "externalReferences": {
                 "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"
@@ -666,7 +666,7 @@
             }
           ],
           "scriptBlockExecutionTimeout": "02:00:00",
-          "database": "controlDB"
+          "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
         },
         "externalReferences": {
           "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"
@@ -715,7 +715,7 @@
             }
           ],
           "scriptBlockExecutionTimeout": "02:00:00",
-          "database": "controlDB"
+          "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
         },
         "externalReferences": {
           "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"

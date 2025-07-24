@@ -21,7 +21,7 @@
         },
         "typeProperties": {
           "storedProcedureName": "[ELT].[InsertIngestInstance]",
-          "database": "controlDB",
+          "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5",
           "storedProcedureParameters": {
             "ADFPipelineRunID": {
               "value": {
@@ -239,7 +239,7 @@
         },
         "typeProperties": {
           "storedProcedureName": "[ELT].[UpdateIngestInstance]",
-          "database": "controlDB",
+          "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5",
           "storedProcedureParameters": {
             "ADFIngestPipelineRunID": {
               "value": {
@@ -313,7 +313,7 @@
         },
         "typeProperties": {
           "storedProcedureName": "[ELT].[UpdateIngestInstance]",
-          "database": "controlDB",
+          "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5",
           "storedProcedureParameters": {
             "ADFIngestPipelineRunID": {
               "value": {
@@ -385,7 +385,7 @@
             "type": "AzureSqlTable",
             "schema": [],
             "typeProperties": {
-              "database": "controlDB"
+              "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
             },
             "externalReferences": {
               "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"
@@ -424,7 +424,7 @@
               },
               "typeProperties": {
                 "storedProcedureName": "[ELT].[InsertTransformInstance_L1]",
-                "database": "controlDB",
+                "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5",
                 "storedProcedureParameters": {
                   "CustomParameters": {
                     "value": {
@@ -629,7 +629,7 @@
             "type": "AzureSqlTable",
             "schema": [],
             "typeProperties": {
-              "database": "controlDB"
+              "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
             },
             "externalReferences": {
               "connection": "5edcfc38-bd7f-448d-8439-31bdfe5ca044"
@@ -668,7 +668,7 @@
               },
               "typeProperties": {
                 "storedProcedureName": "[ELT].[InsertTransformInstance_L2]",
-                "database": "controlDB",
+                "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5",
                 "storedProcedureParameters": {
                   "CustomParameters": {
                     "value": {
@@ -909,7 +909,7 @@
         },
         "typeProperties": {
           "storedProcedureName": "[ELT].[UpdateIngestDefinition]",
-          "database": "controlDB",
+          "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5",
           "storedProcedureParameters": {
             "IngestID": {
               "value": {

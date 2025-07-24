@@ -43,7 +43,7 @@
           "datasetSettings": {
             "type": "AzureSqlTable",
             "typeProperties": {
-              "database": "controlDB"
+              "database": "controlDB-6982c89b-54a7-4406-8895-9339b5d060f5"
             },
             "schema": [],
             "externalReferences": {
