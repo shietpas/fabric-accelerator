@@ -1,7 +1,7 @@
 name: Deploy Fabric Accelerator
 on: workflow_dispatch 
 env:
-  FABRIC_CAPACITY_NAME: fabric-accelerator
+  FABRIC_CAPACITY_NAME: fabricaccelerator
   FABRIC_CAPACITY_LOCATION: australiaeast
   FABRIC_CAPACITY_SKU: F2
   FABRIC_CAPACITY_ADMIN_ID: 770d3d4d-06fa-4fbb-a065-729b2fd14281
