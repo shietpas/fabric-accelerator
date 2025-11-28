@@ -1,8 +1,11 @@
 name: Deploy Fabric Accelerator
 on: workflow_dispatch 
 env:
+  FABRIC_CAPACITY_NAME: fabric-accelerator
+  FABRIC_CAPACITY_LOCATION: australiaeast
+  FABRIC_CAPACITY_SKU: F2
+  RESOURCE_GROUP: rg-fabric-accelerator
   WORKSPACE_NAME: FabricAccelerator
-  FABRIC_CAPACITY_NAME: bafabric014e4fwwm2ufole
   WORKSPACE_ADMIN_ID: 688ad7c8-d7bb-4f32-884a-05601c9762a2
   WORKSPACE_ADMIN_TYPE: user # valid values: user, group
   FABRIC_SQL_DB_NAME: controldb-fabric-accelerator
@@ -71,6 +74,12 @@ jobs:
           run: |
             fab config set encryption_fallback_enabled true
             fab auth login -u ${{ secrets.ACTION_SPN_CLIENTID }} -p ${{ secrets.ACTION_SPN_SECRET }} --tenant ${{ secrets.TENANT_ID }} 
+
+       # Create Fabric Capacity if it doesn't exist
+        - name: Create Fabric Capacity if it doesnt exist
+          run: |
+            fab exists .capacities/$FABRIC_CAPACITY_NAME.Capacity | grep -q true || fab create .capacities/$FABRIC_CAPACITY_NAME.Capacity -P location=$FABRIC_CAPACITY_LOCATION,sku=$FABRIC_CAPACITY_SKU,resourceGroup=$RESOURCE_GROUP,subscriptionId=${{ secrets.SUBSCRIPTION_ID }}, admin=${{ secrets.ACTION_SPN_CLIENTID }}
+            fab ls .capacities/$FABRIC_CAPACITY_NAME.Capacity -q state | tr -d '\r' | grep -q "Inactive" || fab start .capacities/$FABRIC_CAPACITY_NAME.Capacity -f
 
        # Create Workspace if it does not exist
         - name: Create Workspace if it does not exist
