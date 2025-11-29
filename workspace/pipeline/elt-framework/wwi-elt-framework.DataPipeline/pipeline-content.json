@@ -525,7 +525,7 @@
         "typeProperties": {
           "source": {
             "type": "AzureSqlSource",
-            "sqlReaderQuery": "SELECT lower(Tab.Table_Schema + '_' +  Tab.Table_Name) as [OutputDWTable]\n, STRING_AGG(Col.Column_Name,'|') as [LookupColumns]\n, 'append' as [OutputDWTableWriteMode]\nfrom \n    INFORMATION_SCHEMA.TABLE_CONSTRAINTS Tab, \n    INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE Col \nWHERE \n    Col.Constraint_Name = Tab.Constraint_Name\n    AND Col.Table_Name = Tab.Table_Name\n    AND Tab.Constraint_Type = 'PRIMARY KEY'\nGROUP BY lower(Tab.Table_Schema + '_' +  Tab.Table_Name)",
+            "sqlReaderQuery": "SELECT lower(Tab.Table_Schema + '_' +  Tab.Table_Name) as [OutputDWTable]\n, STRING_AGG(Col.Column_Name,'|') as [LookupColumns]\n, 'append' as [OutputDWTableWriteMode]\nfrom \n    INFORMATION_SCHEMA.TABLE_CONSTRAINTS Tab, \n    INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE Col \nWHERE \n    Col.Constraint_Name = Tab.Constraint_Name\n    AND Col.Table_Name = Tab.Table_Name\n    AND Tab.Constraint_Type = 'PRIMARY KEY'\n\tAND Tab.TABLE_SCHEMA IN  ('Application','Purchasing','Sales')\n\tAND Tab.TABLE_NAME IN ('customertransactions','transactiontypes','paymentmethods','orders','people','purchaseorders','suppliertransactions')\nGROUP BY lower(Tab.Table_Schema + '_' +  Tab.Table_Name)",
             "queryTimeout": "02:00:00",
             "partitionOption": "None"
           },

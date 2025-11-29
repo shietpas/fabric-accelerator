@@ -319,7 +319,8 @@
         "type": "string"
       },
       "DelayTransformation": {
-        "type": "int"
+        "type": "int",
+        "defaultValue": 0
       },
       "BronzeObjectID": {
         "type": "string",
