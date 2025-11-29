@@ -66,7 +66,8 @@
       {
         "type": "ForEach",
         "typeProperties": {
-          "isSequential": true,
+          "isSequential": false,
+          "batchCount": 4,
           "items": {
             "value": "@activity('Get Level1 Transform Instances').output.value",
             "type": "Expression"

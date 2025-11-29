@@ -15,7 +15,7 @@
         "typeProperties": {
           "source": {
             "type": "AzureSqlSource",
-            "sqlReaderQuery": "select \n\t'WWI' as [SourceSystemName]\n\t, t.name as [StreamName]\n\t,'Wide World Importers' as [SourceSystemDescription]\n\t,'Azure SQL' as [Backend]\n\t,(s.name + '.' + t.name) as [EntityName]\n\t, c.name as [DeltaName]\n\t, (CASE WHEN c.name is not null then cast('2013-01-01' as datetime)\n\t\tELSE cast('1900-01-01' as datetime)\n\t END) as [LastDeltaDate]\n    , (CASE WHEN c.name is not null then 129600 --90days\n\t\tELSE NULL\n\t END)  as [MaxIntervalMinutes]\n\t,'Files' as [DestinationRawFileSystem]\n    ,'raw_bronze/wwi/'+ s.name +'/'+  t.name +'/YYYY-MM' as [DestinationRawFolder]\n    ,s.name +'_'+ t.name + '_'+ 'YYYY-MM-DD_HHMISS.parquet' as [DestinationRawFile]\n    ,3 as [MaxRetries]\n    ,cast(1 as bit) as [ActiveFlag]\n    ,cast(1 as bit) as [L1TransformationReqdFlag]\n    ,cast(1 as bit) as [L2TransformationReqdFlag]\n    ,cast(0 as bit) as [DelayL1TransformationFlag]\nfrom sys.tables as t\ninner join sys.schemas as s\n\ton s.schema_id = t.schema_id\n\tand s.name in ('Application','Purchasing','Sales','Warehouse')\nleft join sys.columns as c\n\ton c.object_id = t.object_id\n\tand c.name='LastEditedWhen'",
+            "sqlReaderQuery": "select \n\t'WWI' as [SourceSystemName]\n\t, t.name as [StreamName]\n\t,'Wide World Importers' as [SourceSystemDescription]\n\t,'Azure SQL' as [Backend]\n\t,(s.name + '.' + t.name) as [EntityName]\n\t, c.name as [DeltaName]\n\t, (CASE WHEN c.name is not null then cast('2013-01-01' as datetime)\n\t\tELSE cast('1900-01-01' as datetime)\n\t END) as [LastDeltaDate]\n    , (CASE WHEN c.name is not null then 129600 --90days\n\t\tELSE NULL\n\t END)  as [MaxIntervalMinutes]\n\t,'Files' as [DestinationRawFileSystem]\n    ,'raw_bronze/wwi/'+ s.name +'/'+  t.name +'/YYYY-MM' as [DestinationRawFolder]\n    ,s.name +'_'+ t.name + '_'+ 'YYYY-MM-DD_HHMISS.parquet' as [DestinationRawFile]\n    ,3 as [MaxRetries]\n    ,cast(1 as bit) as [ActiveFlag]\n    ,cast(1 as bit) as [L1TransformationReqdFlag]\n    ,cast(1 as bit) as [L2TransformationReqdFlag]\n    ,cast(0 as bit) as [DelayL1TransformationFlag]\n\t,cast(0 as bit) as [DelayL2TransformationFlag]\nfrom sys.tables as t\ninner join sys.schemas as s\n\ton s.schema_id = t.schema_id\n\tand s.name in ('Application','Purchasing','Sales')\n\tand t.name in ('customertransactions','transactiontypes','paymentmethods','orders','people','purchaseorders','suppliertransactions')\nleft join sys.columns as c\n\ton c.object_id = t.object_id\n\tand c.name='LastEditedWhen'",
             "queryTimeout": "02:00:00",
             "partitionOption": "None",
             "datasetSettings": {
@@ -252,6 +252,16 @@
                 },
                 "sink": {
                   "name": "DelayL1TransformationFlag",
+                  "physicalType": "bit"
+                }
+              },
+              {
+                "source": {
+                  "name": "DelayL2TransformationFlag",
+                  "physicalType": "bit"
+                },
+                "sink": {
+                  "name": "DelayL2TransformationFlag",
                   "physicalType": "bit"
                 }
               }
@@ -525,7 +535,7 @@
         "typeProperties": {
           "source": {
             "type": "AzureSqlSource",
-            "sqlReaderQuery": "SELECT lower(Tab.Table_Schema + '_' +  Tab.Table_Name) as [OutputDWTable]\n, STRING_AGG(Col.Column_Name,'|') as [LookupColumns]\n, 'append' as [OutputDWTableWriteMode]\nfrom \n    INFORMATION_SCHEMA.TABLE_CONSTRAINTS Tab, \n    INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE Col \nWHERE \n    Col.Constraint_Name = Tab.Constraint_Name\n    AND Col.Table_Name = Tab.Table_Name\n    AND Tab.Constraint_Type = 'PRIMARY KEY'\nGROUP BY lower(Tab.Table_Schema + '_' +  Tab.Table_Name)",
+            "sqlReaderQuery": "SELECT lower(Tab.Table_Schema + '_' +  Tab.Table_Name) as [OutputDWTable]\n, STRING_AGG(Col.Column_Name,'|') as [LookupColumns]\n, 'append' as [OutputDWTableWriteMode]\nfrom \n    INFORMATION_SCHEMA.TABLE_CONSTRAINTS Tab, \n    INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE Col \nWHERE \n    Col.Constraint_Name = Tab.Constraint_Name\n    AND Col.Table_Name = Tab.Table_Name\n    AND Tab.Constraint_Type = 'PRIMARY KEY'\n\tAND Tab.TABLE_SCHEMA IN  ('Application','Purchasing','Sales')\n\tAND Tab.TABLE_NAME IN ('customertransactions','transactiontypes','paymentmethods','orders','people','purchaseorders','suppliertransactions')\nGROUP BY lower(Tab.Table_Schema + '_' +  Tab.Table_Name)",
             "queryTimeout": "02:00:00",
             "partitionOption": "None"
           },
@@ -565,7 +575,7 @@
             "value": "@activity('Get WWI PK cols').output.value",
             "type": "Expression"
           },
-          "isSequential": true,
+          "isSequential": false,
           "activities": [
             {
               "name": "Update WWI L1T",
