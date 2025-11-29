@@ -76,7 +76,7 @@ jobs:
             fab auth login -u ${{ secrets.ACTION_SPN_CLIENTID }} -p ${{ secrets.ACTION_SPN_SECRET }} --tenant ${{ secrets.TENANT_ID }} 
 
        # Create Fabric Capacity if it doesn't exist
-        - name: Create Fabric Capacity if it doesnt exist
+        - name: Create Fabric Capacity if it doesn't exist
           run: |
             fab exists .capacities/$FABRIC_CAPACITY_NAME.Capacity | grep -q true || fab create .capacities/$FABRIC_CAPACITY_NAME.Capacity -P location=$FABRIC_CAPACITY_LOCATION,sku=$FABRIC_CAPACITY_SKU,resourceGroup=$RESOURCE_GROUP,subscriptionId=${{ secrets.SUBSCRIPTION_ID }},admin=${{ secrets.FABRIC_CAPACITY_ADMIN_EMAIL }}
             # fab ls .capacities/$FABRIC_CAPACITY_NAME.Capacity -q state | tr -d '\r' | grep -q "Inactive" || fab start .capacities/$FABRIC_CAPACITY_NAME.Capacity -f
