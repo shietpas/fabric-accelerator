@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "UserDataFunction",
+    "displayName": "udf__coredb_etl_crud"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "59fe1e45-3596-b131-4367-e606d50c4cc9"
+  }
+}

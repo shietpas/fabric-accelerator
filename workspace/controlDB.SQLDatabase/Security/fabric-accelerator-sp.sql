@@ -1,4 +1,5 @@
-CREATE USER [fabric-accelerator-sp] FOR EXTERNAL PROVIDER;
+CREATE USER [fabric-accelerator-sp]
+    WITH SID = 0xB0F4BF4F3A900E4EA374C758EC2DB401, TYPE = E;
 
 
 GO

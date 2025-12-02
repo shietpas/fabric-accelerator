@@ -1,0 +1,241 @@
+table IngestInstance
+	lineageTag: 130c4575-5d3e-4f61-9888-c5cfd1bbe90f
+	sourceLineageTag: [ELT].[IngestInstance]
+
+	column IngestInstanceID
+		dataType: int64
+		formatString: 0
+		lineageTag: 57523418-2e25-45ec-a2cf-45c2edcf8867
+		sourceLineageTag: IngestInstanceID
+		summarizeBy: count
+		sourceColumn: IngestInstanceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestID
+		dataType: int64
+		formatString: 0
+		lineageTag: 35f4c1f2-2a24-4f3b-a392-ec8ffd2a682e
+		sourceLineageTag: IngestID
+		summarizeBy: count
+		sourceColumn: IngestID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceFileDropFileSystem
+		dataType: string
+		lineageTag: d29d7d33-464b-449f-b50e-39b7336f5ee6
+		sourceLineageTag: SourceFileDropFileSystem
+		summarizeBy: none
+		sourceColumn: SourceFileDropFileSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceFileDropFolder
+		dataType: string
+		lineageTag: 90d585f2-3ff0-4b56-9fe4-c3cc04923995
+		sourceLineageTag: SourceFileDropFolder
+		summarizeBy: none
+		sourceColumn: SourceFileDropFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceFileDropFile
+		dataType: string
+		lineageTag: b2011639-c108-453b-b46f-c29c1f4fe6fa
+		sourceLineageTag: SourceFileDropFile
+		summarizeBy: none
+		sourceColumn: SourceFileDropFile
+
+		annotation SummarizationSetBy = Automatic
+
+	column DestinationRawFileSystem
+		dataType: string
+		lineageTag: f3fe1a1b-e370-4115-87e0-32e9d6b45e2f
+		sourceLineageTag: DestinationRawFileSystem
+		summarizeBy: none
+		sourceColumn: DestinationRawFileSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column DestinationRawFolder
+		dataType: string
+		lineageTag: 88fed90b-284e-4f81-877c-f276e85000d3
+		sourceLineageTag: DestinationRawFolder
+		summarizeBy: none
+		sourceColumn: DestinationRawFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column DestinationRawFile
+		dataType: string
+		lineageTag: 001b78da-41eb-4dce-b3d2-ba995c47268c
+		sourceLineageTag: DestinationRawFile
+		summarizeBy: none
+		sourceColumn: DestinationRawFile
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataFromTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1fda0de1-0d6e-47e7-aaa0-5d008c124c77
+		sourceLineageTag: DataFromTimestamp
+		summarizeBy: none
+		sourceColumn: DataFromTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataToTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: facab6a1-0f1a-4c0b-b519-498c5b73e380
+		sourceLineageTag: DataToTimestamp
+		summarizeBy: none
+		sourceColumn: DataToTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataFromNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: c75aa0f5-1208-4ffa-b14a-430ae9e66d4e
+		sourceLineageTag: DataFromNumber
+		summarizeBy: sum
+		sourceColumn: DataFromNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataToNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: c160ae45-ff98-4b8d-bb9b-fbc468baebef
+		sourceLineageTag: DataToNumber
+		summarizeBy: sum
+		sourceColumn: DataToNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 21a195cf-9632-407c-88a2-9c5184ef1f80
+		sourceLineageTag: SourceCount
+		summarizeBy: sum
+		sourceColumn: SourceCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 636615bd-c9d0-4eae-b1b9-2eb5e637c048
+		sourceLineageTag: IngestCount
+		summarizeBy: sum
+		sourceColumn: IngestCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestStartTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 04da279a-4b7b-410f-ab43-2a445c248f1d
+		sourceLineageTag: IngestStartTimestamp
+		summarizeBy: none
+		sourceColumn: IngestStartTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestEndTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f6b548bd-bf9f-4499-91d2-f288b12f11f0
+		sourceLineageTag: IngestEndTimestamp
+		summarizeBy: none
+		sourceColumn: IngestEndTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestStatus
+		dataType: string
+		lineageTag: a13ad9c1-0c3e-4d2e-a37d-68d24c092603
+		sourceLineageTag: IngestStatus
+		summarizeBy: none
+		sourceColumn: IngestStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column RetryCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 15b2b5a8-0930-4ede-a978-c21d088dcc4b
+		sourceLineageTag: RetryCount
+		summarizeBy: sum
+		sourceColumn: RetryCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReloadFlag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5c36f7da-3c5c-4b6d-94a2-6d00cb2c7717
+		sourceLineageTag: ReloadFlag
+		summarizeBy: none
+		sourceColumn: ReloadFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedBy
+		dataType: string
+		lineageTag: 4be8f66e-4165-4211-989d-c3e1dcdf563f
+		sourceLineageTag: CreatedBy
+		summarizeBy: none
+		sourceColumn: CreatedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 05c1cd7b-e75b-42c8-a549-1e3c5052b842
+		sourceLineageTag: CreatedTimestamp
+		summarizeBy: none
+		sourceColumn: CreatedTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedBy
+		dataType: string
+		lineageTag: c55e8da5-b35b-4e0c-b49e-f5c98ea092c2
+		sourceLineageTag: ModifiedBy
+		summarizeBy: none
+		sourceColumn: ModifiedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 86557e1d-f9d5-4601-aec7-cf4791ed9b68
+		sourceLineageTag: ModifiedTimestamp
+		summarizeBy: none
+		sourceColumn: ModifiedTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADFIngestPipelineRunID
+		dataType: string
+		lineageTag: ea574202-3438-4e73-84af-938fb5f643e0
+		sourceLineageTag: ADFIngestPipelineRunID
+		summarizeBy: none
+		sourceColumn: ADFIngestPipelineRunID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition IngestInstance = entity
+		mode: directLake
+		source
+			entityName: IngestInstance
+			schemaName: ELT
+			expressionSource: 'DirectLake - controlDB'
+

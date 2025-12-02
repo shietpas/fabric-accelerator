@@ -1,0 +1,136 @@
+table ColumnMapping
+	lineageTag: cc9a284a-6c79-4a45-a7d6-380aa80e019e
+	sourceLineageTag: [ELT].[ColumnMapping]
+
+	column MappingID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c5396bc-8bbd-4703-9d91-ed008da10b27
+		sourceLineageTag: MappingID
+		summarizeBy: count
+		sourceColumn: MappingID
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestID
+		dataType: int64
+		formatString: 0
+		lineageTag: ebc7f25a-4a0b-4f1e-b1f0-4cf82224f837
+		sourceLineageTag: IngestID
+		summarizeBy: count
+		sourceColumn: IngestID
+
+		annotation SummarizationSetBy = Automatic
+
+	column L1TransformID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1dc349bc-f5bc-478c-b931-344594deceb8
+		sourceLineageTag: L1TransformID
+		summarizeBy: count
+		sourceColumn: L1TransformID
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9616f986-cdff-4f2b-a780-dda2898b768f
+		sourceLineageTag: L2TransformID
+		summarizeBy: count
+		sourceColumn: L2TransformID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceName
+		dataType: string
+		lineageTag: fe8cae78-9750-4ae7-9e9d-00b5c8090ad9
+		sourceLineageTag: SourceName
+		summarizeBy: none
+		sourceColumn: SourceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column TargetName
+		dataType: string
+		lineageTag: 51ab66ab-54ea-4be9-b855-3d94ad278380
+		sourceLineageTag: TargetName
+		summarizeBy: none
+		sourceColumn: TargetName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: c16ea4c1-58ac-449f-9f0e-59cc59673ddf
+		sourceLineageTag: Description
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column TargetOrdinalPosition
+		dataType: int64
+		formatString: 0
+		lineageTag: 944a8961-5ffa-442f-bf41-3ed2c73e36a5
+		sourceLineageTag: TargetOrdinalPosition
+		summarizeBy: sum
+		sourceColumn: TargetOrdinalPosition
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveFlag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d2075b0a-967c-46ca-bdb5-5d09dc718022
+		sourceLineageTag: ActiveFlag
+		summarizeBy: none
+		sourceColumn: ActiveFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedBy
+		dataType: string
+		lineageTag: 5413326c-7613-42dd-be15-e2bbc76821e2
+		sourceLineageTag: CreatedBy
+		summarizeBy: none
+		sourceColumn: CreatedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 23671208-dda1-4c16-b554-f6845c57e26c
+		sourceLineageTag: CreatedTimestamp
+		summarizeBy: none
+		sourceColumn: CreatedTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedBy
+		dataType: string
+		lineageTag: 45a3b706-437b-4c7b-9897-91bf391b822d
+		sourceLineageTag: ModifiedBy
+		summarizeBy: none
+		sourceColumn: ModifiedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2e20f038-88ae-40b3-9a4a-d5cefb8020a4
+		sourceLineageTag: ModifiedTimestamp
+		summarizeBy: none
+		sourceColumn: ModifiedTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ColumnMapping = entity
+		mode: directLake
+		source
+			entityName: ColumnMapping
+			schemaName: ELT
+			expressionSource: 'DirectLake - controlDB'
+

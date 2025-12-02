@@ -1,0 +1,456 @@
+table L2TransformInstance
+	lineageTag: 06723d27-d231-403d-864e-d50f2ec92ea6
+	sourceLineageTag: [ELT].[L2TransformInstance]
+
+	column L2TransformInstanceID
+		dataType: int64
+		formatString: 0
+		lineageTag: 02c10b68-fc61-40f5-95bc-ebda44d5a31f
+		sourceLineageTag: L2TransformInstanceID
+		summarizeBy: count
+		sourceColumn: L2TransformInstanceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c92f914-25dc-4ac0-8d1d-a0598d7966d5
+		sourceLineageTag: L2TransformID
+		summarizeBy: count
+		sourceColumn: L2TransformID
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestID
+		dataType: int64
+		formatString: 0
+		lineageTag: f6e4311c-f97f-4a03-833c-850094599202
+		sourceLineageTag: IngestID
+		summarizeBy: count
+		sourceColumn: IngestID
+
+		annotation SummarizationSetBy = Automatic
+
+	column L1TransformID
+		dataType: int64
+		formatString: 0
+		lineageTag: ef7ccaea-acf1-44bb-a906-71b88de2b4d0
+		sourceLineageTag: L1TransformID
+		summarizeBy: count
+		sourceColumn: L1TransformID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ComputePath
+		dataType: string
+		lineageTag: ff12a5c9-e525-4c85-9333-ed4fd433cf73
+		sourceLineageTag: ComputePath
+		summarizeBy: none
+		sourceColumn: ComputePath
+
+		annotation SummarizationSetBy = Automatic
+
+	column ComputeName
+		dataType: string
+		lineageTag: df7f21ff-7c64-454c-a613-7542eff2c2cc
+		sourceLineageTag: ComputeName
+		summarizeBy: none
+		sourceColumn: ComputeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomParameters
+		dataType: string
+		lineageTag: 7af5a51b-580b-4759-b02a-06393af5539a
+		sourceLineageTag: CustomParameters
+		summarizeBy: none
+		sourceColumn: CustomParameters
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputFileSystem
+		dataType: string
+		lineageTag: 7ca5fba0-ff43-42f7-af60-790348dad85b
+		sourceLineageTag: InputFileSystem
+		summarizeBy: none
+		sourceColumn: InputFileSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputFileFolder
+		dataType: string
+		lineageTag: 6874456f-2c17-4228-bd8d-e702129ce4b6
+		sourceLineageTag: InputFileFolder
+		summarizeBy: none
+		sourceColumn: InputFileFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputFile
+		dataType: string
+		lineageTag: b25d6344-ba9f-4ffd-a9d4-2f3aee67a267
+		sourceLineageTag: InputFile
+		summarizeBy: none
+		sourceColumn: InputFile
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputFileDelimiter
+		dataType: string
+		lineageTag: d4b585cc-00c3-4ed3-828f-0031b55a72f9
+		sourceLineageTag: InputFileDelimiter
+		summarizeBy: none
+		sourceColumn: InputFileDelimiter
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputFileHeaderFlag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1bb6115a-126b-4bc5-bdb7-e4a396322b3e
+		sourceLineageTag: InputFileHeaderFlag
+		summarizeBy: none
+		sourceColumn: InputFileHeaderFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputDWTable
+		dataType: string
+		lineageTag: bc5f7e65-04af-42d0-83b6-8f7cd03ff36e
+		sourceLineageTag: InputDWTable
+		summarizeBy: none
+		sourceColumn: InputDWTable
+
+		annotation SummarizationSetBy = Automatic
+
+	column WatermarkColName
+		dataType: string
+		lineageTag: 782beb4e-6a29-4340-8886-33e570d2ed84
+		sourceLineageTag: WatermarkColName
+		summarizeBy: none
+		sourceColumn: WatermarkColName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataFromTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ac4e177b-7389-406a-8b18-ddffecd9ab67
+		sourceLineageTag: DataFromTimestamp
+		summarizeBy: none
+		sourceColumn: DataFromTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataToTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 342d4ab3-ebcf-41d5-9d4e-1be0c18925b0
+		sourceLineageTag: DataToTimestamp
+		summarizeBy: none
+		sourceColumn: DataToTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataFromNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: d27b80df-e9c0-4d40-be2e-fad235266489
+		sourceLineageTag: DataFromNumber
+		summarizeBy: sum
+		sourceColumn: DataFromNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataToNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e8ec95c-f3df-4bb8-ab9c-71efd7388104
+		sourceLineageTag: DataToNumber
+		summarizeBy: sum
+		sourceColumn: DataToNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputL2CurateFileSystem
+		dataType: string
+		lineageTag: fdba6127-ab45-4761-8491-b6cfb0b7f51f
+		sourceLineageTag: OutputL2CurateFileSystem
+		summarizeBy: none
+		sourceColumn: OutputL2CurateFileSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputL2CuratedFolder
+		dataType: string
+		lineageTag: 7187175b-b3b6-4502-a32c-59fef1faa8b1
+		sourceLineageTag: OutputL2CuratedFolder
+		summarizeBy: none
+		sourceColumn: OutputL2CuratedFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputL2CuratedFile
+		dataType: string
+		lineageTag: 5f6cf76a-291a-4bc2-8bbd-9126695ef458
+		sourceLineageTag: OutputL2CuratedFile
+		summarizeBy: none
+		sourceColumn: OutputL2CuratedFile
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputL2CuratedFileDelimiter
+		dataType: string
+		lineageTag: 85314b21-adc0-4259-8618-50e2ea699873
+		sourceLineageTag: OutputL2CuratedFileDelimiter
+		summarizeBy: none
+		sourceColumn: OutputL2CuratedFileDelimiter
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputL2CuratedFileFormat
+		dataType: string
+		lineageTag: 2c1fd801-e7c8-44c9-9938-2ef27bd71932
+		sourceLineageTag: OutputL2CuratedFileFormat
+		summarizeBy: none
+		sourceColumn: OutputL2CuratedFileFormat
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputL2CuratedFileWriteMode
+		dataType: string
+		lineageTag: 202e294c-f495-4708-9723-221777c7bed8
+		sourceLineageTag: OutputL2CuratedFileWriteMode
+		summarizeBy: none
+		sourceColumn: OutputL2CuratedFileWriteMode
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputDWStagingTable
+		dataType: string
+		lineageTag: 77cf7afb-e21a-4678-8d51-32751e4c5b5b
+		sourceLineageTag: OutputDWStagingTable
+		summarizeBy: none
+		sourceColumn: OutputDWStagingTable
+
+		annotation SummarizationSetBy = Automatic
+
+	column LookupColumns
+		dataType: string
+		lineageTag: 2241c0d2-0a64-49d6-bb3d-27ad4ce35dc7
+		sourceLineageTag: LookupColumns
+		summarizeBy: none
+		sourceColumn: LookupColumns
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputDWTable
+		dataType: string
+		lineageTag: 4dd1a648-3637-45c1-a4a7-9527e073f1ac
+		sourceLineageTag: OutputDWTable
+		summarizeBy: none
+		sourceColumn: OutputDWTable
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutputDWTableWriteMode
+		dataType: string
+		lineageTag: 90b1fb9b-ef26-4b98-8156-1e0bd458a50c
+		sourceLineageTag: OutputDWTableWriteMode
+		summarizeBy: none
+		sourceColumn: OutputDWTableWriteMode
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 47bea2ab-56d9-4a0e-afc2-94a8f5822c5e
+		sourceLineageTag: InputCount
+		summarizeBy: sum
+		sourceColumn: InputCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformInsertCount
+		dataType: int64
+		formatString: 0
+		lineageTag: eb431251-bbdb-4394-8d37-7ce96fbab58f
+		sourceLineageTag: L2TransformInsertCount
+		summarizeBy: sum
+		sourceColumn: L2TransformInsertCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformUpdateCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 37fee7d0-b57f-4131-b5d0-e2262e9b8aab
+		sourceLineageTag: L2TransformUpdateCount
+		summarizeBy: sum
+		sourceColumn: L2TransformUpdateCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformDeleteCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c135e5e-8c91-4480-bcdb-2369301346f6
+		sourceLineageTag: L2TransformDeleteCount
+		summarizeBy: sum
+		sourceColumn: L2TransformDeleteCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformStartTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b0725d78-325a-486d-98b4-93215a1b5644
+		sourceLineageTag: L2TransformStartTimestamp
+		summarizeBy: none
+		sourceColumn: L2TransformStartTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformEndTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c82bd90d-0109-40b8-8b55-2352f6e7ca14
+		sourceLineageTag: L2TransformEndTimestamp
+		summarizeBy: none
+		sourceColumn: L2TransformEndTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformStatus
+		dataType: string
+		lineageTag: fab8d0c4-1c32-4d12-95bd-8d67f196144c
+		sourceLineageTag: L2TransformStatus
+		summarizeBy: none
+		sourceColumn: L2TransformStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column RetryCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 0053f567-d067-49b6-b977-31c35430a0b1
+		sourceLineageTag: RetryCount
+		summarizeBy: sum
+		sourceColumn: RetryCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveFlag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9eafcebd-182f-45c6-924d-b6ce4e61776f
+		sourceLineageTag: ActiveFlag
+		summarizeBy: none
+		sourceColumn: ActiveFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReRunL2TransformFlag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 51e10206-7061-48c7-be5c-32bc96e346d9
+		sourceLineageTag: ReRunL2TransformFlag
+		summarizeBy: none
+		sourceColumn: ReRunL2TransformFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestADFPipelineRunID
+		dataType: string
+		lineageTag: 54415786-7cd2-46a6-aee1-f7f074effe76
+		sourceLineageTag: IngestADFPipelineRunID
+		summarizeBy: none
+		sourceColumn: IngestADFPipelineRunID
+
+		annotation SummarizationSetBy = Automatic
+
+	column L1TransformADFPipelineRunID
+		dataType: string
+		lineageTag: 61f4c692-d4ef-41cb-a2ce-6e8d2109431f
+		sourceLineageTag: L1TransformADFPipelineRunID
+		summarizeBy: none
+		sourceColumn: L1TransformADFPipelineRunID
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2TransformADFPipelineRunID
+		dataType: string
+		lineageTag: 0edba262-bbbc-4c12-8183-21db277ef15e
+		sourceLineageTag: L2TransformADFPipelineRunID
+		summarizeBy: none
+		sourceColumn: L2TransformADFPipelineRunID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedBy
+		dataType: string
+		lineageTag: f10f1a08-5927-4e1c-abd1-9a6f3b4c93cf
+		sourceLineageTag: CreatedBy
+		summarizeBy: none
+		sourceColumn: CreatedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a6bedaf4-1aa3-4851-9880-1a0d15fd089b
+		sourceLineageTag: CreatedTimestamp
+		summarizeBy: none
+		sourceColumn: CreatedTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedBy
+		dataType: string
+		lineageTag: d91b9917-f505-40da-9449-5b23ef7cffea
+		sourceLineageTag: ModifiedBy
+		summarizeBy: none
+		sourceColumn: ModifiedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedTimestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0ca9aff0-8d4e-40ca-92aa-9fb10134ff0d
+		sourceLineageTag: ModifiedTimestamp
+		summarizeBy: none
+		sourceColumn: ModifiedTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2SnapshotGroupID
+		dataType: int64
+		formatString: 0
+		lineageTag: ffcacf45-caed-4166-938a-8d8192109e3e
+		sourceLineageTag: L2SnapshotGroupID
+		summarizeBy: count
+		sourceColumn: L2SnapshotGroupID
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2SnapshotInstanceID
+		dataType: int64
+		formatString: 0
+		lineageTag: 82d79636-644b-4e4a-853d-274a4b5567be
+		sourceLineageTag: L2SnapshotInstanceID
+		summarizeBy: count
+		sourceColumn: L2SnapshotInstanceID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition L2TransformInstance = entity
+		mode: directLake
+		source
+			entityName: L2TransformInstance
+			schemaName: ELT
+			expressionSource: 'DirectLake - controlDB'
+

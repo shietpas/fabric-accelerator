@@ -1,0 +1,156 @@
+{
+  "runtime": "PYTHON",
+  "functionsMetadata": [
+    {
+      "name": "write_ingestdef",
+      "scriptFile": "function_app.py",
+      "bindings": [
+        {
+          "name": "req",
+          "type": "HttpTrigger",
+          "direction": "In",
+          "authLevel": "Anonymous",
+          "methods": [
+            "POST"
+          ],
+          "route": ""
+        },
+        {
+          "name": "sqlDB",
+          "type": "FabricItem",
+          "direction": "In",
+          "alias": "controlDB",
+          "subType": "FabricSqlConnection",
+          "itemType": null,
+          "audienceType": null
+        }
+      ],
+      "fabricProperties": {
+        "fabricMetadataSchemaVersion": null,
+        "fabricFunctionReturnType": "str",
+        "fabricFunctionParameters": [
+          {
+            "name": "SourceSystemName",
+            "dataType": "str"
+          },
+          {
+            "name": "StreamName",
+            "dataType": "str"
+          },
+          {
+            "name": "SourceSystemDescription",
+            "dataType": "str"
+          },
+          {
+            "name": "Backend",
+            "dataType": "str"
+          },
+          {
+            "name": "DataFormat",
+            "dataType": "str"
+          },
+          {
+            "name": "EntityName",
+            "dataType": "str"
+          },
+          {
+            "name": "WatermarkColName",
+            "dataType": "str"
+          },
+          {
+            "name": "DeltaFormat",
+            "dataType": "str"
+          },
+          {
+            "name": "LastDeltaDate",
+            "dataType": "str"
+          },
+          {
+            "name": "LastDeltaNumber",
+            "dataType": "int"
+          },
+          {
+            "name": "LastDeltaString",
+            "dataType": "str"
+          },
+          {
+            "name": "MaxIntervalMinutes",
+            "dataType": "int"
+          },
+          {
+            "name": "MaxIntervalNumber",
+            "dataType": "int"
+          },
+          {
+            "name": "DataMapping",
+            "dataType": "str"
+          },
+          {
+            "name": "SourceFileDropFileSystem",
+            "dataType": "str"
+          },
+          {
+            "name": "SourceFileDropFolder",
+            "dataType": "str"
+          },
+          {
+            "name": "SourceFileDropFile",
+            "dataType": "str"
+          },
+          {
+            "name": "SourceFileDelimiter",
+            "dataType": "str"
+          },
+          {
+            "name": "SourceFileHeaderFlag",
+            "dataType": "bool"
+          },
+          {
+            "name": "SourceStructure",
+            "dataType": "str"
+          },
+          {
+            "name": "DestinationRawFileSystem",
+            "dataType": "str"
+          },
+          {
+            "name": "DestinationRawFolder",
+            "dataType": "str"
+          },
+          {
+            "name": "DestinationRawFile",
+            "dataType": "str"
+          },
+          {
+            "name": "RunSequence",
+            "dataType": "int"
+          },
+          {
+            "name": "MaxRetries",
+            "dataType": "int"
+          },
+          {
+            "name": "ActiveFlag",
+            "dataType": "bool"
+          },
+          {
+            "name": "L1TransformationReqdFlag",
+            "dataType": "bool"
+          },
+          {
+            "name": "L2TransformationReqdFlag",
+            "dataType": "bool"
+          },
+          {
+            "name": "DelayL1TransformationFlag",
+            "dataType": "bool"
+          },
+          {
+            "name": "DelayL2TransformationFlag",
+            "dataType": "bool"
+          }
+        ]
+      }
+    }
+  ]
+}
