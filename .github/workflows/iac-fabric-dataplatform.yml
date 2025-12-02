@@ -26,5 +26,6 @@ jobs:
         region: southcentralus
         subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
         template: iac/bicep/main.bicep
+        parameters: 'fabric_capacity_admin_email=${{ secrets.FABRIC_CAPACITY_ADMIN_EMAIL }}'
         # parameters: 'k1=v1 k2=v2 k3=v3'
         failOnStdErr: false

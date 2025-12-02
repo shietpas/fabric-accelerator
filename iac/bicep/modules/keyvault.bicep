@@ -15,19 +15,9 @@ param sme_tag string
 @description('Key Vault name')
 param keyvault_name string
 
-@description('Purview Account name')
-param purview_account_name string
-
-@description('Resource group of Purview Account')
-param purviewrg string
-
-@description('Flag to indicate whether to enable integration of data platform resources with either an existing or new Purview resource')
-param enable_purview bool=true
-
 // Variables
 var suffix = uniqueString(resourceGroup().id)
 var keyvault_uniquename = take('${keyvault_name}-${suffix}', 24)
-
 
 // Create Key Vault
 resource keyvault 'Microsoft.KeyVault/vaults@2023-07-01' ={
