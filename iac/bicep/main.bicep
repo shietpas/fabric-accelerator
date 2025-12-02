@@ -8,6 +8,9 @@ param dprg string= 'rg-fabric-accelerator'
 @description('Microsoft Fabric Resource group location')
 param rglocation string = 'northcentralus'
 
+@description('Email of Fabric Capacity Administrator')
+param fabric_capacity_admin_email string
+
 @description('Cost Centre tag that will be applied to all resources in this deployment')
 param cost_centre_tag string = 'DADP-Sandbox'
 
@@ -44,7 +47,6 @@ param auditrg string= 'rg-audit'
 
 // Variables
 var fabric_deployment_name = 'fabric_dataplatform_deployment_${deployment_suffix}'
-var purview_deployment_name = 'purview_deployment_${deployment_suffix}'
 var keyvault_deployment_name = 'keyvault_deployment_${deployment_suffix}'
 var audit_deployment_name = 'audit_deployment_${deployment_suffix}'
 // var controldb_deployment_name = 'controldb_deployment_${deployment_suffix}'
@@ -58,46 +60,6 @@ resource fabric_rg  'Microsoft.Resources/resourceGroups@2024-03-01' = {
         Owner: owner_tag
         SME: sme_tag
   }
-}
-
-
-// Create purview resource group
-resource purview_rg  'Microsoft.Resources/resourceGroups@2024-03-01' = if (create_purview) {
-  name: purviewrg 
-  location: purview_location
-  tags: {
-         CostCentre: cost_centre_tag
-         Owner: owner_tag
-         SME: sme_tag
-   }
- }
-
- // Create audit resource group
-resource audit_rg  'Microsoft.Resources/resourceGroups@2024-03-01' = if(enable_audit) {
-  name: auditrg 
-  location: rglocation
-  tags: {
-         CostCentre: cost_centre_tag
-         Owner: owner_tag
-         SME: sme_tag
-   }
- }
-
-// Deploy Purview using module
-module purview './modules/purview.bicep' = if (create_purview || enable_purview) {
-  name: purview_deployment_name
-  scope: purview_rg
-  params:{
-    create_purview: create_purview
-    enable_purview: enable_purview
-    purviewrg: purviewrg
-    purview_name: purview_name
-    location: purview_location
-    cost_centre_tag: cost_centre_tag
-    owner_tag: owner_tag
-    sme_tag: sme_tag
-  }
-  
 }
 
 // Deploy Key Vault with default access policies using module
@@ -146,7 +108,7 @@ module fabric_capacity './modules/fabric-capacity.bicep' = {
     cost_centre_tag: cost_centre_tag
     owner_tag: owner_tag
     sme_tag: sme_tag
-    adminUsers: owner_tag //kv_ref.getSecret('fabric-capacity-admin-username')
+    adminUsers: fabric_capacity_admin_email //owner_tag //kv_ref.getSecret('fabric-capacity-admin-username')
     skuName: 'F4' // Default Fabric Capacity SKU F2
   }
 }
