@@ -12,7 +12,7 @@ This accelerator will help you build a modern data platform end-to-end with Micr
 ## Features
 - Medallion architecture for both batch and real-time workloads <sup>[1](https://github.com/bennyaustin/fabric-accelerator/wiki/02-Architecture)</sup>.
 - Metadata-driven orchestration using [ELT Framework](https://github.com/bennyaustin/elt-framework) <sup>[2](https://github.com/bennyaustin/fabric-accelerator/wiki/03-Metadata%E2%80%90driven-Orchestration)</sup> 
-- Resusable Data Factory Pipelines that can be readily deployed with configuration changes <sup>[3](https://github.com/bennyaustin/fabric-accelerator/wiki/04-Data-Factory-Pipelines)</sup>
+- Reusable Data Factory Pipelines that can be readily deployed with configuration changes <sup>[3](https://github.com/bennyaustin/fabric-accelerator/wiki/04-Data-Factory-Pipelines)</sup>
 - Reusable Spark notebooks for common transformations <sup>[4](https://github.com/bennyaustin/fabric-accelerator/wiki/05-Spark-Notebooks)</sup>
 - Reusable Real-Time Intelligence (RTI) items <sup>[5](https://github.com/bennyaustin/fabric-accelerator/wiki/11-Real%E2%80%90Time-Intelligence)</sup>
 - Automated monitoring and optimization of Lakehouses <sup>[6](https://github.com/bennyaustin/fabric-accelerator/wiki/06-Lakehouse-Optimizations)</sup>
