@@ -1,0 +1,146 @@
+{
+    "tasks": [
+        {
+            "type": "get data",
+            "id": "task-013716c6-6b01-4cba-8f65-6a7d0d357f7c",
+            "name": "Real-time data ingest",
+            "description": "Ingest streaming data with Eventstream from various sources."
+        },
+        {
+            "type": "get data",
+            "id": "task-493718f7-0bc8-4257-945f-a732ad27cd78",
+            "name": "Batch data ingest",
+            "description": "Ingest batch data from a variety of sources with Pipeline and Dataflow."
+        },
+        {
+            "type": "store data",
+            "id": "task-a1730c94-0ffb-443d-86fc-376f68ca89f9",
+            "name": "Streaming data storage",
+            "description": "Add the Eventhouse as destination store to collect the events from Eventstream and process real-time data on the fly."
+        },
+        {
+            "type": "store data",
+            "id": "task-9853fb6f-bfce-4a73-99a8-fe7a40e17b9e",
+            "name": "Bronze layer",
+            "description": "Consolidate and persist both batch and real-time data into the Lakehouse."
+        },
+        {
+            "type": "visualize",
+            "id": "task-3a7badfe-73b3-4756-a5b5-bb68b3dd47fc",
+            "name": "Monitoring dashboard",
+            "description": "Build near real-time dashboard with the steaming data."
+        },
+        {
+            "type": "prepare data",
+            "id": "task-2d7f1519-02ac-4354-8551-3b741a1c31b0",
+            "name": "Clean and transform data",
+            "description": "Transform and process the raw data into highly structured and high-quality data."
+        },
+        {
+            "type": "store data",
+            "id": "task-9c1e1466-950f-4db1-af18-c492e428be98",
+            "name": "Silver layer",
+            "description": "Maintain the refined data for subsequent analysis and consumption."
+        },
+        {
+            "type": "visualize",
+            "id": "task-977b61d5-d8db-46ce-a493-f0e3ae2c5679",
+            "name": "Data visualize",
+            "description": "Create Power BI Reports to get data insights."
+        },
+        {
+            "type": "analyze and train data",
+            "id": "task-73c57f47-c634-4cae-a51f-a3b2d9710ffa",
+            "name": "ML serving",
+            "description": "Develop and train machine learning models."
+        },
+        {
+            "type": "track data",
+            "id": "task-e445ab80-67af-4e68-b12a-147bfdf51568",
+            "name": "Track data",
+            "description": "Set up alerts on your report for alerting over the data."
+        },
+        {
+            "type": "track data",
+            "id": "task-acd39b70-ada0-4478-bfea-6aa24830d90c",
+            "name": "Detect data",
+            "description": "Detect and monitor streaming data with Activator, configuring automated actions as needed."
+        },
+        {
+            "type": "prepare data",
+            "id": "task-2c262ef1-e74b-41a2-862e-72c8afd9c6da",
+            "name": "Prep for Analytics",
+            "description": "Clean, transform, extract, and load your data for analysis and modeling tasks."
+        },
+        {
+            "type": "store data",
+            "id": "task-44c75f6c-af58-468d-86c0-cee5be59360d",
+            "name": "Gold layer",
+            "description": "Maintain the refined data for subsequent analysis and consumption."
+        },
+        {
+            "type": "general",
+            "id": "task-2b8f4be8-e061-418e-8165-3249342e6d1e",
+            "name": "Initial Setup",
+            "description": "These items are used to support initial setup"
+        },
+        {
+            "type": "general",
+            "id": "task-b655fee7-a377-4b13-9a8b-add7cbd51d42",
+            "name": "Framework Control",
+            "description": "Items supporting the overall framework control, including storage of metadata and managing overall workflow"
+        }
+    ],
+    "edges": [
+        {
+            "source": "task-013716c6-6b01-4cba-8f65-6a7d0d357f7c",
+            "target": "task-a1730c94-0ffb-443d-86fc-376f68ca89f9"
+        },
+        {
+            "source": "task-013716c6-6b01-4cba-8f65-6a7d0d357f7c",
+            "target": "task-9853fb6f-bfce-4a73-99a8-fe7a40e17b9e"
+        },
+        {
+            "source": "task-493718f7-0bc8-4257-945f-a732ad27cd78",
+            "target": "task-9853fb6f-bfce-4a73-99a8-fe7a40e17b9e"
+        },
+        {
+            "source": "task-a1730c94-0ffb-443d-86fc-376f68ca89f9",
+            "target": "task-3a7badfe-73b3-4756-a5b5-bb68b3dd47fc"
+        },
+        {
+            "source": "task-9853fb6f-bfce-4a73-99a8-fe7a40e17b9e",
+            "target": "task-2d7f1519-02ac-4354-8551-3b741a1c31b0"
+        },
+        {
+            "source": "task-2d7f1519-02ac-4354-8551-3b741a1c31b0",
+            "target": "task-9c1e1466-950f-4db1-af18-c492e428be98"
+        },
+        {
+            "source": "task-977b61d5-d8db-46ce-a493-f0e3ae2c5679",
+            "target": "task-e445ab80-67af-4e68-b12a-147bfdf51568"
+        },
+        {
+            "source": "task-013716c6-6b01-4cba-8f65-6a7d0d357f7c",
+            "target": "task-acd39b70-ada0-4478-bfea-6aa24830d90c"
+        },
+        {
+            "source": "task-2c262ef1-e74b-41a2-862e-72c8afd9c6da",
+            "target": "task-44c75f6c-af58-468d-86c0-cee5be59360d"
+        },
+        {
+            "source": "task-44c75f6c-af58-468d-86c0-cee5be59360d",
+            "target": "task-977b61d5-d8db-46ce-a493-f0e3ae2c5679"
+        },
+        {
+            "source": "task-44c75f6c-af58-468d-86c0-cee5be59360d",
+            "target": "task-73c57f47-c634-4cae-a51f-a3b2d9710ffa"
+        },
+        {
+            "source": "task-9c1e1466-950f-4db1-af18-c492e428be98",
+            "target": "task-2c262ef1-e74b-41a2-862e-72c8afd9c6da"
+        }
+    ],
+    "name": "Lambda",
+    "description": "Analyze your batch and real-time data in a single system efficiently and effectively, while still maintaining a clear separation between the two processing modes."
+}
