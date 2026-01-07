@@ -206,6 +206,9 @@ jobs:
 
               echo "Replacing OLD ID with NEW ID in workspace files"
 
+              # NOTE: We could add -r option to sed to support scenario where no files found to replace
+              # However, this is a safety check to ensure that expected replacements are being made
+
               echo "Files to be updated from $OLD_FABRIC_CAPACITY_ID to $NEW_FABRIC_CAPACITY_ID"
               grep --null -rl "$OLD_FABRIC_CAPACITY_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
               grep --null -rl $OLD_FABRIC_CAPACITY_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_FABRIC_CAPACITY_ID/$NEW_FABRIC_CAPACITY_ID/g"

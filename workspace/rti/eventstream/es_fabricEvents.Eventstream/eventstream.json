@@ -26,7 +26,7 @@
       "type": "FabricJobEvents",
       "properties": {
         "eventScope": "Item",
-        "workspaceId": "8d8d00a7-0e8a-4e3b-8c0e-8dcafac7adec",
+        "workspaceId": "681534df-b5cf-44dc-9644-46312e52c461",
         "itemId": "02b37a75-fb44-4efb-9d88-b6171a4d0d7d",
         "includedEventTypes": [
           "Microsoft.Fabric.JobEvents.ItemJobCreated",
