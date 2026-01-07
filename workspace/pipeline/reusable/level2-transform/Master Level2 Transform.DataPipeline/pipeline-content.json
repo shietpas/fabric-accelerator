@@ -76,7 +76,7 @@
               "type": "ExecutePipeline",
               "typeProperties": {
                 "pipeline": {
-                  "referenceName": "5a473c1e-fd95-4b0a-a4a0-33537c65a0d7",
+                  "referenceName": "6038cf55-5d08-49e2-9993-57cdd4bab782",
                   "type": "PipelineReference"
                 },
                 "parameters": {

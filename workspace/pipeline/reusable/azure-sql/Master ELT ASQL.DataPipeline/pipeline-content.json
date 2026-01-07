@@ -66,7 +66,7 @@
               "type": "ExecutePipeline",
               "typeProperties": {
                 "pipeline": {
-                  "referenceName": "7ea78b86-8d5e-4e2e-adc8-1138c278f6ab",
+                  "referenceName": "5aa60fbc-1bde-4ff1-9c46-cb0a59334fbc",
                   "type": "PipelineReference"
                 },
                 "parameters": {
@@ -219,7 +219,7 @@
         "type": "ExecutePipeline",
         "typeProperties": {
           "pipeline": {
-            "referenceName": "592635be-9979-40a3-8a91-0305b696cea2",
+            "referenceName": "24833c00-3aac-4241-aaa9-036d39fcdea6",
             "type": "PipelineReference"
           },
           "parameters": {
@@ -264,7 +264,7 @@
         "type": "ExecutePipeline",
         "typeProperties": {
           "pipeline": {
-            "referenceName": "29ca711a-e20f-457c-a619-35b0310193ad",
+            "referenceName": "0b5f12b3-b005-4da2-b7c2-7cbbcb0c3d6f",
             "type": "PipelineReference"
           },
           "parameters": {

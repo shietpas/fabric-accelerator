@@ -810,7 +810,7 @@
       },
       "ComputeName": {
         "type": "string",
-        "defaultValue": "3e035f81-2c25-416b-9009-b7ba22e444ab"
+        "defaultValue": "56eaefee-9f2e-4e84-aaf8-57340c70e8e8"
       },
       "ComputePath": {
         "type": "string"
