@@ -60,23 +60,6 @@
       }
     },
     {
-      "id": "37054380-0a31-4806-8e12-e38862e7151a",
-      "name": "Master-ELT-ASQL",
-      "type": "FabricJobEvents",
-      "properties": {
-        "eventScope": "Item",
-        "workspaceId": "681534df-b5cf-44dc-9644-46312e52c461",
-        "itemId": "e21becb1-7c6f-48ea-843e-865fcdf780a6",
-        "includedEventTypes": [
-          "Microsoft.Fabric.JobEvents.ItemJobCreated",
-          "Microsoft.Fabric.JobEvents.ItemJobStatusChanged",
-          "Microsoft.Fabric.JobEvents.ItemJobSucceeded",
-          "Microsoft.Fabric.JobEvents.ItemJobFailed"
-        ],
-        "filters": []
-      }
-    },
-    {
       "id": "c9169667-6d84-4650-9eea-88aeb3498274",
       "name": "lh-bronze-storage",
       "type": "FabricOneLakeEvents",
