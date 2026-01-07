@@ -1,19 +1,19 @@
 name: Deploy Fabric Accelerator
 on: workflow_dispatch 
 env:
-  FABRIC_CAPACITY_NAME: fabricaccelerator
-  FABRIC_CAPACITY_LOCATION: australiaeast
+  FABRIC_CAPACITY_NAME: fabaccelerator01qudc3xlaktiti
+  FABRIC_CAPACITY_LOCATION: ncus
   FABRIC_CAPACITY_SKU: F2
-  FABRIC_CAPACITY_ADMIN_ID: f307cb4e-10d6-440b-b3c1-6face6aca616
+  FABRIC_CAPACITY_ADMIN_ID: 15738e6c-335e-4aea-80da-f70c03ff6ac1
   RESOURCE_GROUP: rg-fabric-accelerator
-  WORKSPACE_NAME: FabricAccelerator
-  WORKSPACE_ADMIN_ID: 688ad7c8-d7bb-4f32-884a-05601c9762a2
-  WORKSPACE_ADMIN_TYPE: user # valid values: user, group
+  WORKSPACE_NAME: fabric-accelerator-2
+  WORKSPACE_ADMIN_ID: 50dfeba1-9bb0-4cc5-8478-344065cdcd1c
+  WORKSPACE_ADMIN_TYPE: group # valid values: user, group
   FABRIC_SQL_DB_NAME: controldb-fabric-accelerator
   BRONZE_LH: bronze_fabric_accelerator
   SILVER_LH: silver_fabric_accelerator
   GOLD_DW: gold_fabric_accelerator
-  WIDE_WORLD_IMPORTERS_CONNECTION_ID: a0a57e51-5032-4e46-b0f0-493c9d2f51c9
+  WIDE_WORLD_IMPORTERS_CONNECTION_ID: 0d3b44fb-a17e-42d9-9610-9fe8cf233bff
 
 jobs:
   deploy-fabric-accelerator:
