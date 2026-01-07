@@ -41,3 +41,16 @@ Please contact me to be added as a contributor.
 ## Contact
 If you have any questions or need support, please contact the maintainer:
 - [Benny Austin](https://github.com/bennyaustin)
+
+# Deployment
+This repo has GitHub Actions defined to support deployment - see [deploy-fabric-accelerator.yaml](./.github/workflows/deploy-fabric-accelerator.yml). It relies on hard-coded GUID references for "OLD" ids that are replaced with new IDs following deployment to a new workspace. Currently, each OLD ID must have existing references or the deployment will fail. This is to ensure that a bad ID isn't overlooked.
+
+The deployment process utilizes the [Fabric CLI](https://microsoft.github.io/fabric-cli/). If you want to troubleshoot Fabric CLI commands locally, you can [install the Fabric CLI](https://microsoft.github.io/fabric-cli/#install) within your local VS Code environment. This assumes you already have the Python extension for VS Code installed. You may also want Git Bash installed since the actions use bash syntax. The recommended steps are:
+* In VS Code, [create a new python environment](https://code.visualstudio.com/docs/python/environments#_creating-environments):
+    * Hit F1, seach for Python: Create Environment. (Can choose default Venv option)
+    * Select python interpreter
+* Open a new Terminal window, you may choose to use a bash or PowerShell terminal
+    * This should attempt to activate the environment automatically.
+    * If this fails, you may need to [Set-ExecutionPolicy](https://code.visualstudio.com/docs/python/environments#_creating-environments:~:text=Tip%3A%20If%20the,RemoteSigned%20%2DScope%20Process)
+* pip install ms-fabric-cli
+* type "fab --version" to verify successful installation
