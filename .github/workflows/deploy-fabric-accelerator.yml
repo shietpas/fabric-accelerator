@@ -176,25 +176,32 @@ jobs:
         #   Replace OLD IDs with NEW IDs in workspace files
         - name: Replace OLD IDs with NEW IDs in workspace files
           run: |
-              NEW_FABRIC_CAPACITY_ID=$(fab get $WORKSPACE_NAME.Workspace -q capacityId | tr -d '\r')
+              NEW_FABRIC_CAPACITY_ID=$(fab get $WORKSPACE_NAME.Workspace -q capacityId -f | tr -d '\r')
+              echo "NEW_FABRIC_CAPACITY_ID: $NEW_FABRIC_CAPACITY_ID"
               echo "NEW_FABRIC_CAPACITY_ID=$NEW_FABRIC_CAPACITY_ID" >> $GITHUB_ENV
              
-              NEW_FABRIC_WORKSPACE_ID=$(fab get $WORKSPACE_NAME.Workspace -q id | tr -d '\r')
+              NEW_FABRIC_WORKSPACE_ID=$(fab get $WORKSPACE_NAME.Workspace -q id -f | tr -d '\r')
+              echo "NEW_FABRIC_WORKSPACE_ID: $NEW_FABRIC_WORKSPACE_ID"
               echo "NEW_FABRIC_WORKSPACE_ID=$NEW_FABRIC_WORKSPACE_ID" >> $GITHUB_ENV
              
-              NEW_CONTROLDB_NAME=$(fab get $WORKSPACE_NAME.Workspace/$FABRIC_SQL_DB_NAME.SQLDatabase -q properties.databaseName| tr -d '\r')
+              NEW_CONTROLDB_NAME=$(fab get $WORKSPACE_NAME.Workspace/$FABRIC_SQL_DB_NAME.SQLDatabase -q properties.databaseName -f | tr -d '\r')
+              echo "NEW_CONTROLDB_NAME: $NEW_CONTROLDB_NAME"
               echo "NEW_CONTROLDB_NAME=$NEW_CONTROLDB_NAME" >> $GITHUB_ENV
              
-              NEW_CONTROLDB_CONNECTION_ID=$(fab get .connections/"${WORKSPACE_NAME}-${FABRIC_SQL_DB_NAME}".Connection -q id | tr -d '\r')
+              NEW_CONTROLDB_CONNECTION_ID=$(fab get .connections/"${WORKSPACE_NAME}-${FABRIC_SQL_DB_NAME}".Connection -q id -f | tr -d '\r')
+              echo "NEW_CONTROLDB_CONNECTION_ID: $NEW_CONTROLDB_CONNECTION_ID"
               echo "NEW_CONTROLDB_CONNECTION_ID=$NEW_CONTROLDB_CONNECTION_ID" >> $GITHUB_ENV
              
-              NEW_BRONZE_LH_ID=$(fab get $WORKSPACE_NAME.Workspace/$BRONZE_LH.Lakehouse -q id | tr -d '\r')
+              NEW_BRONZE_LH_ID=$(fab get $WORKSPACE_NAME.Workspace/$BRONZE_LH.Lakehouse -q id -f | tr -d '\r')
+              echo "NEW_BRONZE_LH_ID: $NEW_BRONZE_LH_ID"
               echo "NEW_BRONZE_LH_ID=$NEW_BRONZE_LH_ID" >> $GITHUB_ENV
              
-              NEW_SILVER_LH_ID=$(fab get $WORKSPACE_NAME.Workspace/$SILVER_LH.Lakehouse -q id | tr -d '\r')
+              NEW_SILVER_LH_ID=$(fab get $WORKSPACE_NAME.Workspace/$SILVER_LH.Lakehouse -q id -f | tr -d '\r')
+              echo "NEW_SILVER_LH_ID: $NEW_SILVER_LH_ID"
               echo "NEW_SILVER_LH_ID=$NEW_SILVER_LH_ID" >> $GITHUB_ENV
              
-              NEW_GOLD_DW_ID=$(fab get $WORKSPACE_NAME.Workspace/$GOLD_DW.Warehouse -q id | tr -d '\r')
+              NEW_GOLD_DW_ID=$(fab get $WORKSPACE_NAME.Workspace/$GOLD_DW.Warehouse -q id -f | tr -d '\r')
+              echo "NEW_GOLD_DW_ID: $NEW_GOLD_DW_ID"
               echo "NEW_GOLD_DW_ID=$NEW_GOLD_DW_ID" >> $GITHUB_ENV
 
               echo "Replacing OLD ID with NEW ID in workspace files"
