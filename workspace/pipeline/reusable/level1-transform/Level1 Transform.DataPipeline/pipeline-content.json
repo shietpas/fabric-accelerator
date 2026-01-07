@@ -247,7 +247,7 @@
             "value": "@replace(replace(pipeline().parameters.ComputeName,'-','_'),' ','')",
             "type": "Expression"
           },
-          "capacityId": "39A721A7-A838-4500-BAC2-5B175A98A042"
+          "capacityId": "e18b9ab0-2b5b-4192-afe6-03391d5da7d0"
         }
       },
       {
