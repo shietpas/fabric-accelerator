@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "Modeling_DV2",
+    "description": "Data Vault 2.0 comparison lakehouse for the modeling options demo."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4cf99180-cdfa-456e-b4d8-c2d9f4a6aa10"
+  }
+}

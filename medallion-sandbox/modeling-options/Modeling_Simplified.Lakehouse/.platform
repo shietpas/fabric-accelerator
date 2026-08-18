@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "Modeling_Simplified",
+    "description": "Simplified joined-Silver comparison lakehouse for the modeling options demo."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "55573fd6-1d5b-49dd-a1dc-c4e41493f4a5"
+  }
+}
